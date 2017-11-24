@@ -1,0 +1,24 @@
+c:\users\fernando\documents\visual studio 2017\Projects\ProjetoRH\RHModel\obj\Debug\RHModel.csprojResolveAssemblyReference.cache
+c:\users\fernando\documents\visual studio 2017\Projects\ProjetoRH\RHModel\obj\Debug\RHModel.csproj.CoreCompileInputs.cache
+c:\users\fernando\documents\visual studio 2017\Projects\ProjetoRH\RHModel\bin\Debug\RHModel.dll.config
+c:\users\fernando\documents\visual studio 2017\Projects\ProjetoRH\RHModel\bin\Debug\RHModel.dll
+c:\users\fernando\documents\visual studio 2017\Projects\ProjetoRH\RHModel\bin\Debug\RHModel.pdb
+c:\users\fernando\documents\visual studio 2017\Projects\ProjetoRH\RHModel\bin\Debug\EntityFramework.dll
+c:\users\fernando\documents\visual studio 2017\Projects\ProjetoRH\RHModel\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\fernando\documents\visual studio 2017\Projects\ProjetoRH\RHModel\bin\Debug\EntityFramework.xml
+c:\users\fernando\documents\visual studio 2017\Projects\ProjetoRH\RHModel\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\fernando\documents\visual studio 2017\Projects\ProjetoRH\RHModel\obj\Debug\RHModel.dll
+c:\users\fernando\documents\visual studio 2017\Projects\ProjetoRH\RHModel\obj\Debug\RHModel.pdb
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH\RHModel\obj\Debug\RHModel.Migrations.zero.resources
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH\RHModel\obj\Debug\RHModel.csproj.GenerateResource.Cache
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\bin\Debug\RHModel.dll.config
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\bin\Debug\RHModel.dll
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\bin\Debug\RHModel.pdb
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\bin\Debug\EntityFramework.dll
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\bin\Debug\EntityFramework.xml
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\obj\Debug\RHModel.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\obj\Debug\RHModel.csproj.CoreCompileInputs.cache
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\obj\Debug\RHModel.dll
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\obj\Debug\RHModel.pdb
