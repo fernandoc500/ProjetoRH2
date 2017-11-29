@@ -8,11 +8,20 @@
         Title="Listagem de Empregados" Height="525" Width="375.562">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Menu Grid.Row="0" HorizontalAlignment="Left" Height="20" Margin="0,0,0,0" VerticalAlignment="Top">
+            <MenuItem Header="Arquivo"></MenuItem>
+            <MenuItem Header="Relatório">
+                <MenuItem Header="RelatorioTeste"
+                          Name="RelatorioTeste"
+                          Click="RelatorioTeste_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
         <DataGrid 
-            Grid.Row="0" 
+            Grid.Row="1" 
             Name="DGEmp"
             ItemsSource="{Binding Path='Empregados'}" 
             AutoGenerateColumns="False"
@@ -25,7 +34,7 @@
                 <DataGridTextColumn Binding="{Binding Superior.Nome}" ClipboardContentBinding="{x:Null}" Header="Superior"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -47,10 +56,11 @@
             <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path='EmpregadoSelecionado.Cpf'}"></TextBox>
             <DatePicker Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" SelectedDate="{Binding Path='EmpregadoSelecionado.DataNascimento'}"></DatePicker>
             <DatePicker Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" SelectedDate="{Binding Path='EmpregadoSelecionado.DataContratacao'}"></DatePicker>
-            
+
             <Button Name="btnSalvar" Content="Salvar" Grid.Row="4" Grid.Column="0" VerticalAlignment="Bottom" Height="35" Click="btnSalvar_Click"/>
             <Button Name="btnCancelar" Content="Cancelar" Grid.Row="4" Grid.Column="2" VerticalAlignment="Bottom" Height="35" Click="btnCancelar_Click"/>
         </Grid>
+
 
     </Grid>
 </Window>

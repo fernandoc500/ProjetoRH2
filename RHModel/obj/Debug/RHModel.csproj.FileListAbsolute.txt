@@ -18,7 +18,8 @@ C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\bin\Debug\EntityFra
 C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\bin\Debug\EntityFramework.xml
 C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\obj\Debug\RHModel.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\obj\Debug\RHModel.Migrations.zero.resources
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\obj\Debug\RHModel.csproj.GenerateResource.Cache
 C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\obj\Debug\RHModel.csproj.CoreCompileInputs.cache
 C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\obj\Debug\RHModel.dll
 C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHModel\obj\Debug\RHModel.pdb

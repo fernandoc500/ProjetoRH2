@@ -72,5 +72,10 @@ namespace RHView
         {
 
         }
+
+        private void RelatorioTeste_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,0 +1,15 @@
+﻿<Window x:Class="RHView.Relatorios.RelatorioTesteTres"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+        xmlns:local="clr-namespace:RHView.Relatorios"
+        mc:Ignorable="d"
+        Title="RelatorioTesteTres" Height="300" Width="300" Loaded="Window_Loaded">
+    <Grid>
+        <WindowsFormsHost Name="wfh">
+            <rv:ReportViewer x:Name="teste"></rv:ReportViewer>
+        </WindowsFormsHost>
+    </Grid>
+</Window>
