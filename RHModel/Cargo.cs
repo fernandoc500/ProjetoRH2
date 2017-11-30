@@ -38,7 +38,7 @@ namespace RHModel
             set { _CargoPai = value; this.NotifyPropertyChanged("CargoPai"); }
         }
         private Cargo _CargoPai;
-        public int CargoPaiId { get; set; }
+        public int? CargoPaiId { get; set; }
 
         #region "NotifyPropertyChanged"
         public event PropertyChangedEventHandler PropertyChanged;

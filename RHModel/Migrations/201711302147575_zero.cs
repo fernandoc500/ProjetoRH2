@@ -34,7 +34,7 @@ namespace RHModel.Migrations
                         SuperiorId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Cargo", t => t.CargoId, cascadeDelete: true)
+                .ForeignKey("dbo.Cargo", t => t.CargoId)
                 .ForeignKey("dbo.Empregado", t => t.SuperiorId)
                 .Index(t => t.CargoId)
                 .Index(t => t.SuperiorId);
@@ -50,8 +50,8 @@ namespace RHModel.Migrations
                         DataFim = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Cargo", t => t.CargoId, cascadeDelete: true)
-                .ForeignKey("dbo.Empregado", t => t.EmpregadoId, cascadeDelete: true)
+                .ForeignKey("dbo.Cargo", t => t.CargoId)
+                .ForeignKey("dbo.Empregado", t => t.EmpregadoId)
                 .Index(t => t.EmpregadoId)
                 .Index(t => t.CargoId);
             
@@ -66,8 +66,8 @@ namespace RHModel.Migrations
                         DataFim = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Empregado", t => t.EmpregadoId, cascadeDelete: true)
-                .ForeignKey("dbo.Setor", t => t.SetorId, cascadeDelete: true)
+                .ForeignKey("dbo.Empregado", t => t.EmpregadoId)
+                .ForeignKey("dbo.Setor", t => t.SetorId)
                 .Index(t => t.SetorId)
                 .Index(t => t.EmpregadoId);
             
@@ -84,7 +84,7 @@ namespace RHModel.Migrations
                         Atividades = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Empregado", t => t.ResponsavelId, cascadeDelete: true)
+                .ForeignKey("dbo.Empregado", t => t.ResponsavelId)
                 .ForeignKey("dbo.Setor", t => t.SetorPaiId)
                 .Index(t => t.SetorPaiId)
                 .Index(t => t.ResponsavelId);
@@ -100,7 +100,7 @@ namespace RHModel.Migrations
                         DataFim = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Cargo", t => t.CargoId, cascadeDelete: true)
+                .ForeignKey("dbo.Cargo", t => t.CargoId)
                 .Index(t => t.CargoId);
             
             CreateTable(
@@ -114,7 +114,7 @@ namespace RHModel.Migrations
                         DataFim = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Empregado", t => t.EmpregadoId, cascadeDelete: true)
+                .ForeignKey("dbo.Empregado", t => t.EmpregadoId)
                 .Index(t => t.EmpregadoId);
             
         }

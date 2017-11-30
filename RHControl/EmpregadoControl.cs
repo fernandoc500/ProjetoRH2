@@ -13,38 +13,44 @@ namespace RHControl
 
         public void SalvarEmpregado(Empregado e)
         {
-            try
+            if (e.Id == 0)
             {
-                if (e.Id == 0)
-                {
-                    e.CargoId = e.Cargo.Id;
-                    e.Cargo = null;
+                e.CargoId = e.Cargo.Id;
+                e.Cargo = null;
 
-                    e.SuperiorId = e.Superior.Id;
-                    e.Superior = null;
-
-                    ctx.Empregados.Add(e);
-                }
-                else
-                {
-                    Empregado empregado = ctx.Empregados.Find(e.Id);
-                    e.CargoId = e.Cargo.Id;
-                    e.Cargo = null;
-
-                    e.SuperiorId = e.Superior.Id;
-                    e.Superior = null;
-
-                    empregado.Cpf = e.Cpf;
-                    empregado.DataContratacao = e.DataContratacao;
-                    empregado.DataNascimento = e.DataNascimento;
-                    empregado.Nome = e.Nome;
-                }
-                ctx.SaveChanges();
-            }
-            catch (Exception ex)
+                if (e.Superior != null)
             {
-
+                e.SuperiorId = e.Superior.Id;
+                e.Superior = null;
             }
+                    
+
+                ctx.Empregados.Add(e);
+            }
+            else
+            {
+                Empregado empregado = ctx.Empregados.Find(e.Id);
+
+            if (e.Cargo != null)
+            {
+                e.CargoId = e.Cargo.Id;
+                e.Cargo = null;
+            }
+                    
+            if (e.Superior != null)
+            {
+                e.SuperiorId = e.Superior.Id;
+                e.Superior = null;
+            }
+                    
+
+                empregado.Cpf = e.Cpf;
+                empregado.DataContratacao = e.DataContratacao;
+                empregado.DataNascimento = e.DataNascimento;
+                empregado.Nome = e.Nome;
+                empregado.Salario = e.Salario;
+            }
+            ctx.SaveChanges();
         }
 
         public void RemoveEmpregado(Empregado e)

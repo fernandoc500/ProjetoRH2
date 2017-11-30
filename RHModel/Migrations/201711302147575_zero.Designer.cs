@@ -13,7 +13,7 @@ namespace RHModel.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201711232215393_zero"; }
+            get { return "201711302147575_zero"; }
         }
         
         string IMigrationMetadata.Source

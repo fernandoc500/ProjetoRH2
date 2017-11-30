@@ -51,13 +51,13 @@ namespace RHModel
         }
         private decimal _Salario;
 
-        [Required]
         [ForeignKey("CargoId")]
         public Cargo Cargo {
             get { return _Cargo; }
             set { _Cargo = value; this.NotifyPropertyChanged("Cargo"); }
         }
         private Cargo _Cargo;
+        [Required]
         public int CargoId { get; set; }
 
         [ForeignKey("SuperiorId")]
@@ -66,7 +66,7 @@ namespace RHModel
             set { _Superior = value; this.NotifyPropertyChanged("Superior"); }
         }
         private Empregado _Superior;
-        public int SuperiorId { get; set; }
+        public int? SuperiorId { get; set; }
 
         public IList<Empregado> Subordinados { get; set; }
         #region "NotifyPropertyChanged"

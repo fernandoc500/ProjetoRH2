@@ -79,3 +79,8 @@ C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHView\obj\Debug\RHView.exe
 C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHView\obj\Debug\RHView.pdb
 C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHView\obj\Debug\Relatorios\RelatorioTesteTres.g.cs
 C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHView\obj\Debug\Relatorios\RelatorioTesteTres.baml
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHView\bin\Debug\RHControl.dll
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHView\bin\Debug\RHControl.pdb
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHView\bin\Debug\RHControl.dll.config
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHView\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHView\bin\Debug\EntityFramework.SqlServer.xml

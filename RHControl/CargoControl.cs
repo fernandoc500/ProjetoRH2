@@ -14,28 +14,29 @@ namespace RHControl
 
         public void SalvarCargo(Cargo c)
         {
-            try
+            if (c.Id == 0)
             {
-                if (c.Id == 0)
+                if (c.CargoPai != null)
                 {
                     c.CargoPaiId = c.CargoPai.Id;
                     c.CargoPai = null;
-                    ctx.Cargos.Add(c);
                 }
-                else
+                ctx.Cargos.Add(c);
+            }
+            else
+            {
+                Cargo cargo = ctx.Cargos.Find(c.Id);
+                cargo.Nome = c.Nome;
+                cargo.SalarioBase = c.SalarioBase;
+
+                if (cargo.CargoPai != null)
                 {
-                    Cargo cargo = ctx.Cargos.Find(c.Id);
-                    cargo.Nome = c.Nome;
-                    cargo.SalarioBase = c.SalarioBase;
                     cargo.CargoPaiId = c.CargoPai.Id;
                     cargo.CargoPai = null;
                 }
-                ctx.SaveChanges();
-            }
-            catch (Exception ex)
-            {
                 
             }
+            ctx.SaveChanges();
         }
 
         public void RemoveCargo(Cargo c)

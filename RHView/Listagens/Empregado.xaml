@@ -59,6 +59,7 @@
 
             <Button Name="btnSalvar" Content="Salvar" Grid.Row="4" Grid.Column="0" VerticalAlignment="Bottom" Height="35" Click="btnSalvar_Click"/>
             <Button Name="btnCancelar" Content="Cancelar" Grid.Row="4" Grid.Column="2" VerticalAlignment="Bottom" Height="35" Click="btnCancelar_Click"/>
+            <Button Name="btnNovo" Content="Novo" Grid.Row="4" Grid.Column="1" VerticalAlignment="Bottom" Height="35" Click="btnNovo_Click"/>
         </Grid>
 
 
