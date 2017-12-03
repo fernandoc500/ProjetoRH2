@@ -12,3 +12,17 @@ C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHControl\obj\Debug\RHContr
 C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHControl\obj\Debug\RHControl.csproj.CoreCompileInputs.cache
 C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHControl\obj\Debug\RHControl.dll
 C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHControl\obj\Debug\RHControl.pdb
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\bin\Debug\RHControl.dll.config
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\bin\Debug\RHControl.dll
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\bin\Debug\RHControl.pdb
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\bin\Debug\EntityFramework.dll
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\bin\Debug\RHModel.dll
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\bin\Debug\RHModel.pdb
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\bin\Debug\RHModel.dll.config
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\bin\Debug\EntityFramework.xml
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\obj\Debug\RHControl.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\obj\Debug\RHControl.csproj.CoreCompileInputs.cache
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\obj\Debug\RHControl.dll
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHControl\obj\Debug\RHControl.pdb

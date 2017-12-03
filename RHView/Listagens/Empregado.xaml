@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RHView"
         mc:Ignorable="d"
-        Title="Listagem de Empregados" Height="525" Width="375.562">
+        Title="Listagem de Empregados" Height="525" Width="450" Closed="Window_Closed">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -28,10 +28,10 @@
             SelectedItem="{Binding Path='EmpregadoSelecionado'}">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Nome}" ClipboardContentBinding="{x:Null}" Header="Nome"/>
-                <DataGridTextColumn Binding="{Binding Cpf}" ClipboardContentBinding="{x:Null}" Header="CPF"/>
-                <DataGridTextColumn Binding="{Binding DataNascimento}" ClipboardContentBinding="{x:Null}" Header="Nascimento"/>
-                <DataGridTextColumn Binding="{Binding DataContratacao}" ClipboardContentBinding="{x:Null}" Header="Contratação"/>
-                <DataGridTextColumn Binding="{Binding Superior.Nome}" ClipboardContentBinding="{x:Null}" Header="Superior"/>
+                <DataGridTextColumn Binding="{Binding DataNascimento}" ClipboardContentBinding="{x:Null}" Header="Data de Nascimento"/>
+                <DataGridTextColumn Binding="{Binding Idade}" ClipboardContentBinding="{x:Null}" Header="Idade"/>
+                <DataGridTextColumn Binding="{Binding Salario}" ClipboardContentBinding="{x:Null}" Header="Salário"/>
+                <DataGridTextColumn Binding="{Binding Cargo.Nome}" ClipboardContentBinding="{x:Null}" Header="Cargo"/>
             </DataGrid.Columns>
         </DataGrid>
         <Grid Grid.Row="2">
@@ -40,28 +40,48 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0">Nome</Label>
-            <Label Grid.Row="1" Grid.Column="0">CPF</Label>
-            <Label Grid.Row="2" Grid.Column="0">Data de Nascimento</Label>
-            <Label Grid.Row="3" Grid.Column="0">Data de Contratação</Label>
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">Nome</Label>
+            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">CPF</Label>
+            <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">Salário</Label>
+            <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">Data de Nascimento</Label>
+            <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">Data de Contratação</Label>
+            <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">Cargo</Label>
 
-            <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path='EmpregadoSelecionado.Nome'}"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path='EmpregadoSelecionado.Cpf'}"></TextBox>
-            <DatePicker Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" SelectedDate="{Binding Path='EmpregadoSelecionado.DataNascimento'}"></DatePicker>
-            <DatePicker Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" SelectedDate="{Binding Path='EmpregadoSelecionado.DataContratacao'}"></DatePicker>
+            <TextBox Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Text="{Binding Path='EmpregadoSelecionado.Nome'}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Text="{Binding Path='EmpregadoSelecionado.Cpf'}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Text="{Binding Path='EmpregadoSelecionado.Salario'}"></TextBox>
+            <DatePicker Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" SelectedDate="{Binding Path='EmpregadoSelecionado.DataNascimento'}"></DatePicker>
+            <DatePicker Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" SelectedDate="{Binding Path='EmpregadoSelecionado.DataContratacao'}"></DatePicker>
+            <ComboBox 
+                Grid.Row="5" 
+                Grid.Column="2" 
+                Grid.ColumnSpan="2" 
+                ItemsSource="{Binding Path='Cargos'}" 
+                SelectedValue="{Binding Path='EmpregadoSelecionado.Cargo'}" 
+                Name="ComboBoxCargo"
+                DisplayMemberPath="Nome"
+            />
 
-            <Button Name="btnSalvar" Content="Salvar" Grid.Row="4" Grid.Column="0" VerticalAlignment="Bottom" Height="35" Click="btnSalvar_Click"/>
-            <Button Name="btnCancelar" Content="Cancelar" Grid.Row="4" Grid.Column="2" VerticalAlignment="Bottom" Height="35" Click="btnCancelar_Click"/>
-            <Button Name="btnNovo" Content="Novo" Grid.Row="4" Grid.Column="1" VerticalAlignment="Bottom" Height="35" Click="btnNovo_Click"/>
+            <Button Name="btnHistoricoCargo" Content="Ver histórico de cargos" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="btnHistoricoCargo_Click"/>
+
+            <Button Name="btnSalvar" Content="Salvar" Grid.Row="9" Grid.Column="0"  Click="btnSalvar_Click"/>
+            <Button Name="btnNovo" Content="Novo" Grid.Row="9" Grid.Column="1" Click="btnNovo_Click"/>
+            <Button Name="btnCancelar" Content="Cancelar" Grid.Row="9" Grid.Column="2" Click="btnCancelar_Click"/>
+            <Button Name="btnRemover" Content="Remover" Grid.Row="9" Grid.Column="3"/>
+
         </Grid>
-
-
     </Grid>
 </Window>

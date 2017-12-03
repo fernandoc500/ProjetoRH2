@@ -45,16 +45,7 @@ namespace RHModel
             set { _SetorPai = value; this.NotifyPropertyChanged("SetorPai"); }
         }
         private Setor _SetorPai;
-        public int SetorPaiId { get; set; }
-
-        [ForeignKey("ResponsavelId")]
-        public Empregado Responsavel
-        {
-            get { return _Responsavel; }
-            set { _Responsavel = value; this.NotifyPropertyChanged("Responsavel"); }
-        }
-        private Empregado _Responsavel;
-        public int ResponsavelId { get; set; }
+        public int? SetorPaiId { get; set; }
 
         [Required]
         public string Atividades

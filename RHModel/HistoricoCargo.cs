@@ -23,6 +23,7 @@ namespace RHModel
         public int CargoId { get; set; }
 
         public DateTime DataInicio { get; set; }
-        public DateTime DataFim { get;set; }
+
+        public DateTime? DataFim { get;set; }
     }
 }

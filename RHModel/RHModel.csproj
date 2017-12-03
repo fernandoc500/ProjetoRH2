@@ -53,14 +53,6 @@
     <Compile Include="HistoricoEmpregadoSetor.cs" />
     <Compile Include="HistoricoSalarioCargo.cs" />
     <Compile Include="HistoricoSalarioEmpregado.cs" />
-    <Compile Include="Migrations\201711302147575_zero.cs" />
-    <Compile Include="Migrations\201711302147575_zero.Designer.cs">
-      <DependentUpon>201711302147575_zero.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711302216482_one.cs" />
-    <Compile Include="Migrations\201711302216482_one.Designer.cs">
-      <DependentUpon>201711302216482_one.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NovoRelatorioTeste.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,14 +62,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711302147575_zero.resx">
-      <DependentUpon>201711302147575_zero.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711302216482_one.resx">
-      <DependentUpon>201711302216482_one.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

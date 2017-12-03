@@ -30,16 +30,11 @@ namespace RHModel
         }
     }
 
-    public class Initializer : DropCreateDatabaseAlways<RHContext>
+    public class Initializer : CreateDatabaseIfNotExists<RHContext>
     {
         protected override void Seed(RHContext context)
         {
             base.Seed(context);
-            context.Database.Delete();
-            context.Database.Create();
-
-            
-
         }
 
         

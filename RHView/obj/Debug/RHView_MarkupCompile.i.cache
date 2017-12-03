@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHView\obj\Debug\
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHView\obj\Debug\
 RHView
 none
 false
 DEBUG;TRACE
-C:\Users\Fernando\Documents\ProjetosVS2017\ProjetoRH\RHView\App.xaml
-21723990816
+C:\Users\Fernando\Documents\Visual Studio 2017\Projects\ProjetoRH2\RHView\App.xaml
+6544741186
 51001242449
-12-268728976
-281440519733
-Listagens\Empregado.xaml;Relatorios\RelatorioTesteTres.xaml;
+16-525396968
+34923587625
+Formularios\FormularioCargo.xaml;Listagens\Empregado.xaml;Listagens\ListagemCargo.xaml;Listagens\ListagemHistoricoCargo.xaml;MainMenu.xaml;Relatorios\RelatorioTesteTres.xaml;
 
 True
 

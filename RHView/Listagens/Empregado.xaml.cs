@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using RHModel;
 using System.ComponentModel;
 using RHControl;
+using RHView.Listagens;
 
 namespace RHView
 {
@@ -31,56 +32,55 @@ namespace RHView
             }
         }
         #endregion
-        public IList<Empregado> Empregados { get; set; }
+        private IList<Empregado> _Empregados { get; set; }
+        public IList<Empregado> Empregados
+        {
+            get { return _Empregados; }
+            set { _Empregados = value; this.NotifyPropertyChanged("Empregados"); }
+        }
+
         private Empregado _EmpregadoSelecionado;
         public Empregado EmpregadoSelecionado {
             get {return _EmpregadoSelecionado; }
             set { _EmpregadoSelecionado = value; this.NotifyPropertyChanged("EmpregadoSelecionado"); }
         }
 
+        public CargoControl cc = new CargoControl();
+
+        private IList<Cargo> _Cargos { get; set; }
+        public IList<Cargo> Cargos
+        {
+            get { return _Cargos; }
+            set { _Cargos = value; this.NotifyPropertyChanged("Cargos"); }
+        }
+
+        //Utilizei isso para evitar que essa janela, se aberta da listagem de cargos, não chame a MainMenu quando fechada
+        Boolean omitOnClose = false;
+
         public ListagemEmpregado()
         {
+            InicializacaoPadrao();
+        }
 
+        public ListagemEmpregado(Empregado emp, Boolean omitOnClose)
+        {
+            InicializacaoPadrao();
+            EmpregadoSelecionado = emp;
+            this.omitOnClose = omitOnClose;
+        }
+
+        private void InicializacaoPadrao()
+        {
             InitializeComponent();
             this.DataContext = this;
 
-
-            // popular a propriedade com um list all de empregados
             Empregados = new List<Empregado>();
-
-            Cargo c = new Cargo();
-            c.Nome = "Teste";
-            c.SalarioBase = 1000;
-
-            Empregado emp2 = new Empregado();
-            emp2.Nome = "Chefe Teste";
-            emp2.Cpf = "000.191.000-00";
-            emp2.DataNascimento = new DateTime(2002, 5, 25);
-            emp2.DataContratacao = new DateTime(2015, 4, 9);
-            emp2.Salario = 5000;
-            emp2.Cargo = c;
-
-            
-            Empregado emp = new Empregado();
-            emp.Nome = "Subordinado Teste";
-            emp.Cpf = "086.194.469-08";
-            emp.Cargo = c;
-            emp.DataNascimento = new DateTime(2001, 4, 20);
-            emp.DataContratacao = new DateTime(2017, 4, 20);
-            emp.Superior = emp2;
-            emp.Salario = 1000;
-
 
             EmpregadoControl ec = new EmpregadoControl();
             CargoControl cc = new CargoControl();
 
-            cc.SalvarCargo(c);
-            ec.SalvarEmpregado(emp2);
-            ec.SalvarEmpregado(emp);
-
-
             Empregados = ec.ObterEmpregados();
-            
+            Cargos = cc.ObterCargos();
         }
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
@@ -89,7 +89,11 @@ namespace RHView
             {
                 Empregado emp = EmpregadoSelecionado;
                 EmpregadoControl ec = new EmpregadoControl();
-                ec.SalvarEmpregado(emp);
+                emp.Cargo = (Cargo)ComboBoxCargo.SelectedItem;
+                
+                MessageBox.Show(ec.SalvarEmpregado(emp));
+
+                Empregados = ec.ObterEmpregados();
             } catch (Exception exc)
             {
                 MessageBox.Show(exc.Message);
@@ -109,7 +113,36 @@ namespace RHView
 
         private void btnNovo_Click(object sender, RoutedEventArgs e)
         {
+            EmpregadoControl ec = new EmpregadoControl();
+            EmpregadoSelecionado = new Empregado();
+            EmpregadoSelecionado.DataContratacao = new DateTime(1972, 1, 1);
+            EmpregadoSelecionado.DataNascimento = new DateTime(1972, 1, 1);
+        }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if (!omitOnClose)
+            {
+                MainMenu mm = new MainMenu();
+                mm.Show();
+            }
+        }
+
+        private void btnHistoricoCargo_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (EmpregadoSelecionado.Id > 0)
+                {
+                    ListagemHistoricoCargo lhc = new ListagemHistoricoCargo(EmpregadoSelecionado);
+                    lhc.Show();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Certifique-se de que está clicando em um registro válido");
+            }
         }
     }
 }

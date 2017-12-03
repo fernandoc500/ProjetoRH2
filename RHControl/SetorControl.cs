@@ -18,10 +18,8 @@ namespace RHControl
                 if (s.Id == 0)
                 {
                     s.SetorPaiId = s.SetorPai.Id;
-                    s.ResponsavelId = s.Responsavel.Id;
 
                     s.SetorPai = null;
-                    s.Responsavel = null;
 
                     ctx.Setores.Add(s);
                 }
@@ -35,10 +33,8 @@ namespace RHControl
                     setor.DataExtincao = s.DataExtincao;
 
                     setor.SetorPaiId = s.SetorPai.Id;
-                    setor.ResponsavelId = s.Responsavel.Id;
 
                     setor.SetorPai = null;
-                    setor.Responsavel = null;
                 }
                 ctx.SaveChanges();
             }

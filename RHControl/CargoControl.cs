@@ -56,5 +56,18 @@ namespace RHControl
             var cargos = from cargo in ctx.Cargos.Include("CargoPai") select cargo;
             return cargos.ToList();
         }
+
+        public IList<Empregado> ObterEmpregadosPorCargo(int cargoId)
+        {
+            /// Eager loading.
+            /// O include força que na busca dos carros as propriedades dono também serão preenchidas.
+            /// Sem o include as propriedades que são outras classes estarão nulas.
+            var empregados = 
+                from emp 
+                in ctx.Empregados
+                where emp.CargoId == cargoId
+                select emp;
+            return empregados.ToList();
+        }
     }
 }

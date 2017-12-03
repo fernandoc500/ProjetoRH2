@@ -60,15 +60,15 @@ namespace RHModel
         [Required]
         public int CargoId { get; set; }
 
-        [ForeignKey("SuperiorId")]
-        public Empregado Superior {
-            get { return _Superior; }
-            set { _Superior = value; this.NotifyPropertyChanged("Superior"); }
-        }
-        private Empregado _Superior;
-        public int? SuperiorId { get; set; }
+        [NotMapped]
+        public int Idade { get; set; }
 
-        public IList<Empregado> Subordinados { get; set; }
+        [NotMapped]
+        public int DiasNoCargo { get; set; }
+
+        [NotMapped]
+        public DateTime InicioUltimoCargo { get; set; }
+
         #region "NotifyPropertyChanged"
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String info)

@@ -11,46 +11,55 @@ namespace RHControl
     {
         RHContext ctx = new RHContext();
 
-        public void SalvarEmpregado(Empregado e)
+        public String SalvarEmpregado(Empregado e)
         {
-            if (e.Id == 0)
+            try
             {
-                e.CargoId = e.Cargo.Id;
-                e.Cargo = null;
+                HistoricoCargoControl hcc = new HistoricoCargoControl();
 
-                if (e.Superior != null)
-            {
-                e.SuperiorId = e.Superior.Id;
-                e.Superior = null;
-            }
-                    
+                if (e.Id == 0)
+                {
+                    e.CargoId = e.Cargo.Id;
+                    e.Cargo = null;
 
-                ctx.Empregados.Add(e);
-            }
-            else
-            {
-                Empregado empregado = ctx.Empregados.Find(e.Id);
+                    ctx.Empregados.Add(e);
 
-            if (e.Cargo != null)
-            {
-                e.CargoId = e.Cargo.Id;
-                e.Cargo = null;
-            }
-                    
-            if (e.Superior != null)
-            {
-                e.SuperiorId = e.Superior.Id;
-                e.Superior = null;
-            }
-                    
+                    ctx.SaveChanges();
 
-                empregado.Cpf = e.Cpf;
-                empregado.DataContratacao = e.DataContratacao;
-                empregado.DataNascimento = e.DataNascimento;
-                empregado.Nome = e.Nome;
-                empregado.Salario = e.Salario;
+                    hcc.SalvarHistoricoCargo(e);
+
+                }
+                else
+                {
+                    Empregado empregado = ctx.Empregados.Find(e.Id);
+
+                    if (e.Cargo != null)
+                    {
+                        e.CargoId = e.Cargo.Id;
+                        e.Cargo = null;
+                    }
+
+                    empregado.Cpf = e.Cpf;
+                    empregado.DataContratacao = e.DataContratacao;
+                    empregado.DataNascimento = e.DataNascimento;
+                    empregado.Nome = e.Nome;
+                    empregado.Salario = e.Salario;
+                    empregado.CargoId = e.CargoId;
+
+                    ctx.SaveChanges();
+
+                    hcc.SalvarHistoricoCargo(empregado);
+
+                }
+
+
+
+                return "Item salvo com sucesso!";
+            } catch(Exception ex)
+            {
+                return ex.Message;
             }
-            ctx.SaveChanges();
+            
         }
 
         public void RemoveEmpregado(Empregado e)
@@ -64,22 +73,26 @@ namespace RHControl
 
         public IList<Empregado> ObterEmpregados()
         {
+            HistoricoCargoControl hc = new HistoricoCargoControl();
             var empregados =
                 from empregado
-                in ctx.Empregados.Include("Superior").Include("Cargo")
+                in ctx.Empregados.Include("Cargo")
                 select empregado;
+
+            IList<Empregado> aux = empregados.ToList();
+
+            foreach (Empregado emp in aux)
+            {
+                DateTime hoje = DateTime.Today;
+                int idade = hoje.Year - emp.DataNascimento.Year;
+                if (emp.DataNascimento > hoje.AddYears(-idade)) idade--;
+
+                emp.Idade = idade;
+                emp.InicioUltimoCargo = hc.RecuperarDataInicioUltimoCargo(emp);
+                emp.DiasNoCargo = (int)(DateTime.Today - emp.InicioUltimoCargo).TotalDays;
+            }
+
             return empregados.ToList();
-        }
-
-        public IList<Empregado> ObterSubordinados(Empregado e)
-        {
-            var subordinados =
-                from empregado
-                in ctx.Empregados
-                where empregado.SuperiorId == e.Id
-                select empregado;
-
-            return subordinados.ToList();
         }
     }
 }
