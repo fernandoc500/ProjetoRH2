@@ -70,5 +70,20 @@ namespace RHControl
             HistoricoCargo hc = datas.First();
             return hc.DataInicio;
         }
+
+        public void RemoverHistorico(Empregado e)
+        {
+            if (e.Id != 0)
+            {
+                var datas =
+                from data
+                in ctx.HistoricoCargo
+                where (data.EmpregadoId == e.Id)
+                select data;
+
+                ctx.HistoricoCargo.RemoveRange(datas);
+                ctx.SaveChanges();
+            }
+        }
     }
 }

@@ -144,5 +144,25 @@ namespace RHView
                 MessageBox.Show("Certifique-se de que está clicando em um registro válido");
             }
         }
+
+        private void btnRemover_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                EmpregadoControl ec = new EmpregadoControl();
+                if (EmpregadoSelecionado.Id > 0)
+                {
+                    Empregado emp = EmpregadoSelecionado;
+                    ec.RemoveEmpregado(emp);
+                    DGEmp.UnselectAll();
+                    Empregados = ec.ObterEmpregados();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Certifique-se de que está clicando em um registro válido");
+            }
+        }
     }
 }

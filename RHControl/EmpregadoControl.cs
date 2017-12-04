@@ -66,7 +66,11 @@ namespace RHControl
         {
             if (e.Id != 0)
             {
-                ctx.Empregados.Remove(e);
+                HistoricoCargoControl hcc = new HistoricoCargoControl();
+                hcc.RemoverHistorico(e);
+
+                Empregado empregado = ctx.Empregados.Find(e.Id);
+                ctx.Empregados.Remove(empregado);
                 ctx.SaveChanges();
             }
         }

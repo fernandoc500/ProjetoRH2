@@ -47,7 +47,10 @@ namespace RHView.Listagens
             get { return _CargoSelecionado; }
             set {
                 _CargoSelecionado = value;
-                Empregados = cc.ObterEmpregadosPorCargo(value.Id);
+                if (value != null)
+                {
+                    Empregados = cc.ObterEmpregadosPorCargo(value.Id);
+                }
                 this.NotifyPropertyChanged("CargoSelecionado"); }
         }
 
@@ -82,7 +85,7 @@ namespace RHView.Listagens
 
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
         {
-            FormularioCargo fc = new FormularioCargo();
+            FormularioCargo fc = new FormularioCargo(this);
             fc.Show();
         }
 
@@ -113,6 +116,29 @@ namespace RHView.Listagens
                 MessageBox.Show("Certifique-se de que está clicando em um registro válido");
             }
 
+        }
+
+        private void btnRemover_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Cargo c = (Cargo)GrCargos.SelectedItem;
+                if (c.Id > 0)
+                {
+                    GrCargos.UnselectAll();
+                    cc.RemoveCargo(c);
+                    Cargos = cc.ObterCargos();
+                }
+
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show("Existem elementos dependentes. Remoção não é permitida.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Certifique-se de que está clicando em um registro válido");
+            }
         }
     }
 }

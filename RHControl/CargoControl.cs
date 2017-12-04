@@ -43,7 +43,8 @@ namespace RHControl
         {
             if (c.Id != 0)
             {
-                ctx.Cargos.Remove(c);
+                Cargo cargo = ctx.Cargos.Find(c.Id);
+                ctx.Cargos.Remove(cargo);
                 ctx.SaveChanges();
             }
         }

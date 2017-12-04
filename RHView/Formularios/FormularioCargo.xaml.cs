@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using RHModel;
 using RHControl;
+using RHView.Listagens;
 
 namespace RHView.Formularios
 {
@@ -24,12 +25,14 @@ namespace RHView.Formularios
         public Cargo NovoCargo { get; set; }
         public IList<Cargo> Cargos { get; set; }
         CargoControl cc = new CargoControl();
+        public ListagemCargo opener;
 
-        public FormularioCargo()
+        public FormularioCargo(ListagemCargo ListagemCargo)
         {
             InitializeComponent();
             this.DataContext = this;
             NovoCargo = new Cargo();
+            opener = ListagemCargo;
             Cargos = cc.ObterCargos();
         }
 
@@ -37,6 +40,7 @@ namespace RHView.Formularios
         {
             NovoCargo.CargoPai = (Cargo)ComboBoxPai.SelectedValue;
             cc.SalvarCargo(NovoCargo);
+            this.opener.Cargos = cc.ObterCargos();
             this.Close();
         }
     }

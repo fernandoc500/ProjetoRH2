@@ -7,13 +7,19 @@
         mc:Ignorable="d"
         Title="ListagemCargo" Height="300" Width="300" Closed="Window_Closed">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <DataGrid 
+            Name="GrCargos"
             Grid.Row="0"
+            Grid.ColumnSpan="2"
             ItemsSource="{Binding Path='Cargos'}"    
             AutoGenerateColumns="False"
             SelectedItem="{Binding Path='CargoSelecionado'}"
@@ -27,6 +33,7 @@
         <DataGrid 
             Name="Emps"
             Grid.Row="1"
+            Grid.ColumnSpan="2"
             ItemsSource="{Binding Path='Empregados'}"
             AutoGenerateColumns="False" MouseDoubleClick="Emps_MouseDoubleClick"
             IsReadOnly="True">
@@ -35,7 +42,8 @@
                 <DataGridTextColumn Binding="{Binding InicioUltimoCargo}" ClipboardContentBinding="{x:Null}" Header="Data de Contratação"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Name="btnAdicionar" Content="Novo Cargo" Grid.Row="2" HorizontalAlignment="Left" Width="75" Click="btnAdicionar_Click"/>
+        <Button Name="btnAdicionar" Content="Novo Cargo" Grid.Row="2" Grid.Column="0" Click="btnAdicionar_Click"/>
+        <Button Name="btnRemover" Content="Remover Cargo" Grid.Row="2" Grid.Column="1" Click="btnRemover_Click"/>
 
 
     </Grid>
